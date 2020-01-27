@@ -1,0 +1,15 @@
+尽管CNN在分割任务中取得了不错的效果，但是还存在以下缺点
+1.Mismatched Relationship: 匹配关系错误，如将在水中的船识别为车。
+2.Confusion Categories: 模糊的分类，如 hill 和 mountain的区分。
+3.Inconspicuous classes: 无视小尺寸物品。
+ 
+损失浅层特征图的信息？
+
+U-net改进了这点，保留了浅层特征图的信息，但是依然有缺点
+1.深层语义信息逐渐传递到浅层，但是位置信息慢慢逐渐被稀释
+2.CNN的感受野和层的深度不符合？不太明白？？？
+
+文章的改进方法：
+Pyramid Pooling Module (PPM) 将卷积得到的深度特征图进行金字塔池化
+Global Guiding Flows (GGFs)使得高级语义信息以金字塔方式传递到特征图中
+
